@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Buttons with Flags</title>
+    <style>
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px;
+            align-items: center;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .flag {
+            display: none;
+            margin-top: 20px;
+            width: 150px;
+            height: auto;
+            border: 1px solid #ddd;
+        }
+   </style>
+    <body>
+        <div class="button-container">
+            <button onclick="showFlag('pakistan')">Pakistan</button>
+            <button onclick="showFlag('india')">India</button>
+            <button onclick="showFlag('china')">China</button>
+            <button onclick="showFlag('england')">England</button>
+            <button onclick="showFlag('chile')">Chile</button>
+        </div>
+        <img id="flag" class="flag" src="in.png alt="Country Flag">
+    
+        <script>
+            function showFlag(country) {
+                const flag = document.getElementById('flag');
+                flag.src = `flags/${country}pk.png`;
+                flag.style.display = 'block';
+            }
+        </script>
+    <script>
+    function showFlag(country) {
+        const flag = document.getElementById('flag');
+        const flagUrls = {
+            pakistan: "https://flagcdn.com/w320/pk.png",
+            india: "https://flagcdn.com/w320/in.png",
+            china: "https://flagcdn.com/w320/cn.png",
+            england: "https://flagcdn.com/224x168/gb.png",
+            chile: "https://flagcdn.com/w320/cl.png"
+        };
+        
+        flag.src = flagUrls[country];
+        flag.style.display = 'block';
+    }
+</Script>
+</body>
+</head>
+</html>
